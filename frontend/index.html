@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>English Practice Partner</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div id="setup-view" class="view">
+  <div class="card">
+    <h1>Set up your English teacher</h1>
+    <p class="hint">A dedicated conversation partner whose only job is helping you practice spoken English — vocabulary, grammar, and spelling. You can change this any time.</p>
+
+    <label>Teacher's name</label>
+    <input id="f-name" type="text" placeholder="e.g. Ms. Claire" value="Ms. Claire" />
+
+    <label>Your English level</label>
+    <select id="f-level">
+      <option value="beginner">Beginner — simple words, slower pace</option>
+      <option value="intermediate" selected>Intermediate — natural pace, some new words explained</option>
+      <option value="advanced">Advanced — full natural speed, idioms, refinement</option>
+    </select>
+
+    <label>Practice focus</label>
+    <select id="f-mode"></select>
+
+    <label id="f-detail-label">Details (optional)</label>
+    <input id="f-detail" type="text" placeholder="" />
+
+    <label>Voice</label>
+    <select id="f-voice"></select>
+
+    <label>Ollama model</label>
+    <select id="f-model"></select>
+    <p id="model-hint" class="hint">Models currently pulled in Ollama.</p>
+
+    <button id="btn-save" class="primary">Save &amp; start call</button>
+    <p id="setup-error" class="error"></p>
+  </div>
+</div>
+
+<div id="call-view" class="view hidden">
+  <div class="call-layout">
+    <div class="call-card">
+      <div id="orb" class="orb idle"></div>
+      <div id="her-name" class="her-name">Ms. Claire</div>
+      <div id="status" class="status">Connecting...</div>
+
+      <div id="transcript" class="transcript"></div>
+
+      <div class="controls">
+        <button id="btn-mute" class="control">Mute</button>
+        <button id="btn-end" class="control end">End call</button>
+      </div>
+    </div>
+
+    <div class="vocab-panel">
+      <div class="vocab-section">
+        <h3>Today's words</h3>
+        <ul id="target-words-list" class="word-list"></ul>
+      </div>
+      <div class="vocab-section">
+        <h3>New words you learned</h3>
+        <ul id="learned-words-list" class="word-list"></ul>
+        <p id="learned-empty-hint" class="hint">Words you might not know will show up here as they come up.</p>
+        <p class="hint small">Translations here are generated live and may occasionally be imprecise — "Today's words" above are pre-checked and accurate.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

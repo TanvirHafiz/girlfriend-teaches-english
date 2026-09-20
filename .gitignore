@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Logs and local artifacts
+*.log
+*.stackdump
+*.wav
+*.mp3
+
+# Personal data — your teacher profile/personas are local to your machine
+backend/profiles/*.json
